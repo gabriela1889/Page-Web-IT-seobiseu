@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>IT seobiseu - Directorio de Clientes y Sedes Corporativas</title>
+  
+  <!-- Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              main: '#0B132B',
+              surface: '#1C2541',
+              card: '#1E293B',
+              border: '#2A3656',
+              cyan: '#38BDF8',
+              electric: '#48CAE4',
+              cobalt: '#0077B6',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./styles/custom.css">
+</head>
+
+<body class="bg-grid-pattern text-slate-100 font-sans min-h-screen relative antialiased selection:bg-brand-cyan selection:text-slate-900 overflow-x-hidden">
+
+  <div class="fixed top-0 right-0 w-[550px] h-[550px] bg-sky-500/10 blur-[140px] rounded-full pointer-events-none z-0"></div>
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside id="mainSidebar" class="fixed left-0 top-0 h-full w-64 bg-[#1C2541]/90 backdrop-blur-2xl border-r border-slate-800/80 z-50 flex flex-col justify-between shadow-2xl transition-all duration-300">
+    <div class="flex flex-col">
+      <div class="h-16 px-5 flex items-center justify-between border-b border-slate-800/60">
+        <a href="index.html" id="brandLogoFull" class="flex items-center gap-3 group">
+          <div class="relative w-8 h-8 rounded-xl bg-gradient-to-tr from-[#0077B6] to-[#48CAE4] p-[1.5px] shadow-lg shadow-sky-500/20 group-hover:shadow-sky-400/40 transition-all">
+            <div class="w-full h-full bg-[#0B132B] rounded-[10px] flex items-center justify-center">
+              <span class="material-symbols-outlined text-brand-electric text-[18px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <span class="font-display font-bold text-slate-100 text-sm tracking-tight group-hover:text-brand-electric transition-colors">IT seobiseu</span>
+              <span class="px-1.5 py-0.2 text-[9px] font-mono font-semibold text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20 rounded">PRO</span>
+            </div>
+            <span class="text-[9px] text-slate-400 tracking-wider font-mono uppercase">Service Desk OS</span>
+          </div>
+        </a>
+        <a href="index.html" id="brandLogoShort" class="hidden mx-auto">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#0077B6] to-[#48CAE4] p-[1.5px] shadow-lg shadow-sky-500/20">
+            <div class="w-full h-full bg-[#0B132B] rounded-[10px] flex items-center justify-center">
+              <span class="material-symbols-outlined text-brand-electric text-[18px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+            </div>
+          </div>
+        </a>
+        <span class="nav-badge text-[10px] font-mono text-sky-400/80 bg-slate-800/70 border border-slate-700/50 px-2 py-0.5 rounded-full">v2.5</span>
+      </div>
+
+      <div class="px-3 pt-4">
+        <p class="nav-section-title text-[10px] font-mono uppercase text-slate-400 font-semibold px-3 mb-2 tracking-wider">Operaciones & Módulos</p>
+        <nav class="flex flex-col gap-1">
+          <a href="index.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent hover:border-slate-700/50 transition-all group btn-pro">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-brand-electric text-[18px]">grid_view</span>
+              <span class="nav-label text-xs font-display">Dashboard Principal</span>
+            </div>
+          </a>
+          <a href="ordenes.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent hover:border-slate-700/50 transition-all group btn-pro">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-brand-electric text-[18px]">assignment</span>
+              <span class="nav-label text-xs font-display">Órdenes de Trabajo</span>
+            </div>
+            <span class="nav-badge text-[10px] font-mono font-medium px-1.5 py-0.2 rounded-full bg-sky-950/80 text-sky-300 border border-sky-800/50">14</span>
+          </a>
+          <a href="inventario.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent hover:border-slate-700/50 transition-all group btn-pro">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-brand-electric text-[18px]">memory</span>
+              <span class="nav-label text-xs font-display">Inventario Repuestos</span>
+            </div>
+            <span class="nav-badge text-[10px] font-mono font-medium px-1.5 py-0.2 rounded-full bg-rose-950/80 text-rose-300 border border-rose-800/50">3</span>
+          </a>
+          <a href="tickets.html" class="flex items-center justify-between px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent hover:border-slate-700/50 transition-all group btn-pro">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-brand-electric text-[18px]">headset_mic</span>
+              <span class="nav-label text-xs font-display">Solicitudes / Tickets</span>
+            </div>
+          </a>
+          <a href="clientes.html" class="flex items-center justify-between px-3 py-2 rounded-xl bg-gradient-to-r from-sky-500/20 to-sky-500/5 text-sky-300 border border-sky-500/30 font-semibold shadow-sm transition-all group btn-pro">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-brand-cyan text-[18px]" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+              <span class="nav-label text-xs font-display tracking-wide">Directorio Clientes</span>
+            </div>
+            <span class="nav-badge text-[10px] font-mono font-medium px-1.5 py-0.2 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800/50">28 VIP</span>
+          </a>
+          <a href="#" class="flex items-center justify-between px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800/60 hover:text-white border border-transparent hover:border-slate-700/50 transition-all group btn-pro">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-slate-400 group-hover:text-brand-electric text-[18px]">settings</span>
+              <span class="nav-label text-xs font-display">Ajustes del Sistema</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="p-3">
+      <div id="sidebarTelemetryWidget" class="p-3 bg-[#0B132B]/80 rounded-xl border border-slate-800/80 backdrop-blur-md">
+        <div class="flex items-center justify-between mb-1">
+          <div class="flex items-center gap-1.5">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-[11px] font-mono font-semibold text-emerald-400">Servicios Operativos</span>
+          </div>
+          <span class="text-[9px] font-mono text-slate-400">99.98%</span>
+        </div>
+        <p id="telemetryLatency" class="text-[10px] font-mono text-slate-400">Latencia 18ms • SLA Alpha</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <div id="mainContentWrapper" class="pl-64 flex flex-col min-h-screen relative z-10 transition-all duration-300">
+    
+    <!-- HEADER -->
+    <header id="mainHeader" class="fixed top-0 left-64 right-0 h-16 bg-[#1C2541]/85 backdrop-blur-xl border-b border-slate-800/80 z-40 px-6 flex items-center justify-between gap-4 shadow-xl transition-all duration-300">
+      <div class="flex items-center gap-3.5 flex-1 max-w-2xl">
+        <button id="sidebarCollapseBtn" aria-label="Colapsar menú lateral" class="p-2 text-slate-400 hover:text-white hover:bg-slate-800/70 rounded-xl border border-transparent hover:border-slate-700/60 transition-all btn-pro" type="button">
+          <span class="material-symbols-outlined text-[20px]">menu_open</span>
+        </button>
+
+        <div class="relative flex items-center w-full max-w-md group">
+          <span class="material-symbols-outlined absolute left-3.5 text-slate-400 group-focus-within:text-brand-cyan text-[18px] transition-colors">search</span>
+          <input 
+            class="global-search-input w-full bg-[#0B132B]/85 font-sans text-xs text-slate-200 placeholder:text-slate-400 rounded-xl pl-10 pr-20 py-2 border border-slate-800 group-hover:border-slate-700 focus:border-brand-cyan/60 focus:bg-[#0B132B] focus:ring-2 focus:ring-brand-cyan/20 focus:outline-none transition-all cursor-pointer" 
+            placeholder="Buscar por Razón Social, RUC/NIT, Sede..." 
+            type="text"
+            readonly
+          />
+          <div class="absolute right-2.5 flex items-center gap-1 font-mono text-[9px] text-slate-400 bg-slate-800/90 border border-slate-700/70 px-1.5 py-0.5 rounded shadow-sm pointer-events-none">
+            <span>CTRL</span><span>+</span><span>K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>EN LÍNEA</span>
+        </div>
+
+        <button id="notifToggleBtn" aria-label="Notificaciones" class="relative p-2 text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-xl border border-transparent hover:border-slate-700/60 transition-all btn-pro">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500 border border-[#1C2541]"></span>
+          </span>
+        </button>
+
+        <div class="relative">
+          <button id="userMenuBtn" class="flex items-center gap-2.5 p-1 rounded-xl hover:bg-slate-800/70 border border-transparent hover:border-slate-700/60 transition-all btn-pro">
+            <div class="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#0077B6] to-[#48CAE4] flex items-center justify-center font-bold text-slate-900 font-mono text-[11px] shadow-sm">CM</div>
+            <div class="hidden md:flex flex-col text-left leading-none">
+              <span class="font-display text-xs font-semibold text-slate-100">Ing. Carlos Mendoza</span>
+              <span class="text-[9px] font-mono text-brand-cyan mt-0.5">SuperAdmin IT</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-400 text-[16px]">expand_more</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="w-full pt-20 px-6 sm:px-8 pb-10 flex-1">
+      
+      <!-- Top Title Bar -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-5">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-mono text-[10px] text-brand-cyan uppercase tracking-widest bg-slate-800/80 border border-slate-700/60 px-2 py-0.5 rounded font-semibold">CRM & Telemetría // IT seobiseu</span>
+            <span class="text-xs text-slate-500">•</span>
+            <span class="text-[11px] text-slate-400 font-mono">28 Cuentas Enterprise</span>
+          </div>
+          <h1 class="font-display font-bold text-xl sm:text-2xl text-white tracking-tight">Directorio Corporativo de Clientes y Sedes</h1>
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <button data-modal-target="newClientModal" onclick="openModal('newClientModal')" class="btn-primary-gradient flex items-center gap-1.5 px-4 py-2 rounded-xl font-display text-xs font-bold shadow-lg shadow-sky-500/25 transition-all" type="button">
+            <span class="material-symbols-outlined text-[16px]">add_business</span>
+            <span>+ Registrar Cliente</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Clients Table (Compact py-3 px-4) -->
+      <div class="bg-[#1C2541]/85 backdrop-blur-xl border border-slate-800 rounded-2xl shadow-xl overflow-hidden relative">
+        
+        <div class="p-3.5 border-b border-slate-800 flex items-center justify-between gap-3">
+          <div class="relative flex-1 max-w-md">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+            <input id="clientsFilterSearch" class="w-full bg-[#0B132B]/85 font-sans text-xs text-slate-200 placeholder:text-slate-400 rounded-xl pl-9 pr-4 py-2 border border-slate-800 focus:border-brand-cyan/60 focus:outline-none" placeholder="Filtrar por empresa o contrato SLA..." type="text"/>
+          </div>
+          <button id="btnRefreshClients" class="btn-pro p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60 transition-all" title="Recargar clientes (Simular skeleton)">
+            <span class="material-symbols-outlined text-[16px]">refresh</span>
+          </button>
+        </div>
+
+        <div id="clientsSkeletonLoader" class="hidden p-5 space-y-3">
+          <div class="h-9 skeleton-shimmer rounded-xl w-full"></div>
+          <div class="h-12 skeleton-shimmer rounded-xl w-full"></div>
+          <div class="h-12 skeleton-shimmer rounded-xl w-full"></div>
+        </div>
+
+        <div id="clientsTableContent" class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="bg-[#0B132B]/85 text-slate-400 font-mono uppercase text-[10px] tracking-wider border-b border-slate-800/80">
+                <th class="py-3 px-4 font-semibold">Razón Social & Logo</th>
+                <th class="py-3 px-4 font-semibold">Sedes & Datacenters</th>
+                <th class="py-3 px-4 font-semibold">Equipos Instalados</th>
+                <th class="py-3 px-4 font-semibold">Contrato SLA</th>
+                <th class="py-3 px-4 font-semibold">Estado de Cuenta</th>
+                <th class="py-3 px-4 font-semibold text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 font-sans">
+              
+              <!-- Client 1 -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-3 px-4" data-label="Cliente">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-display font-bold text-xs">
+                      BC
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-200">Bancolombia S.A.</div>
+                      <div class="text-[10px] font-mono text-slate-400">NIT: 890.903.938-8</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3 px-4 text-slate-300" data-label="Sede">
+                  <div>Medellín • Dirección General Calle 50</div>
+                  <div class="text-[10px] text-slate-400">Datacenter Primario</div>
+                </td>
+                <td class="py-3 px-4 font-mono text-brand-cyan font-semibold" data-label="Infraestructura">18 Racks • 42 Servidores</td>
+                <td class="py-3 px-4" data-label="SLA">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 font-semibold">
+                    SLA Tier 4 (2h 24/7)
+                  </span>
+                </td>
+                <td class="py-3 px-4" data-label="Estado">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold">
+                    Activo
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right" data-label="Acciones">
+                  <button aria-label="Ver expediente de Bancolombia S.A." onclick="showToast('Cargando ficha técnica y contratos de Bancolombia S.A..', 'info', 'Expediente')" class="btn-pro p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-[15px]">visibility</span>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Client 2 -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-3 px-4" data-label="Cliente">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-display font-bold text-xs">
+                      CS
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-200">Clínica San Patricio</div>
+                      <div class="text-[10px] font-mono text-slate-400">RUC: 20492819001</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3 px-4 text-slate-300" data-label="Sede">
+                  <div>Pabellón Central</div>
+                  <div class="text-[10px] text-slate-400">Red Fibra & Switch Core</div>
+                </td>
+                <td class="py-3 px-4 font-mono text-brand-cyan font-semibold" data-label="Infraestructura">6 Racks • 14 Servidores</td>
+                <td class="py-3 px-4" data-label="SLA">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 font-semibold">
+                    SLA Tier 3 (4h)
+                  </span>
+                </td>
+                <td class="py-3 px-4" data-label="Estado">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-amber-500/15 text-amber-400 border border-amber-500/30 font-semibold">
+                    En Auditoría
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right" data-label="Acciones">
+                  <button aria-label="Ver expediente de Clínica San Patricio" onclick="showToast('Cargando ficha técnica de Clínica San Patricio.', 'info', 'Expediente')" class="btn-pro p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-[15px]">visibility</span>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Client 3 -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-3 px-4" data-label="Cliente">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-display font-bold text-xs">
+                      LG
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-200">Logística Global Express</div>
+                      <div class="text-[10px] font-mono text-slate-400">RUC: 20551982731</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3 px-4 text-slate-300" data-label="Sede">
+                  <div>Hub Aeropuerto T2</div>
+                  <div class="text-[10px] text-slate-400">Workstations de Escaneo</div>
+                </td>
+                <td class="py-3 px-4 font-mono text-brand-cyan font-semibold" data-label="Infraestructura">28 Terminales GPU</td>
+                <td class="py-3 px-4" data-label="SLA">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 font-semibold">
+                    SLA Standard (8h)
+                  </span>
+                </td>
+                <td class="py-3 px-4" data-label="Estado">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-rose-500/15 text-rose-400 border border-rose-500/30 font-semibold">
+                    Renovación
+                  </span>
+                </td>
+                <td class="py-3 px-4 text-right" data-label="Acciones">
+                  <button aria-label="Ver expediente de Logística Global Express" onclick="showToast('Cargando contrato de Logística Global Express.', 'info', 'Expediente')" class="btn-pro p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all">
+                    <span class="material-symbols-outlined text-[15px]">visibility</span>
+                  </button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL: NUEVO CLIENTE -->
+  <div id="newClientModal" class="modal-container hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-[#1C2541] border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div class="p-5 bg-[#0B132B]/85 border-b border-slate-800 flex items-center justify-between">
+        <h3 class="font-display font-bold text-sm text-white">Registrar Nuevo Cliente Corporativo (Colombia)</h3>
+        <button data-modal-close class="btn-pro w-7 h-7 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+      </div>
+
+      <form id="formNewClient" data-validate="true" data-success-msg="Cliente corporativo registrado y contrato SLA asociado con éxito." class="p-5 space-y-3.5">
+        <div>
+          <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Razón Social *</label>
+          <input id="newClientName" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 placeholder:text-slate-500 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" placeholder="Ej: Cementos Argos S.A. / ISA Interconexión" type="text"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">NIT Colombia *</label>
+            <input id="newClientNit" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 placeholder:text-slate-500 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none font-mono" placeholder="901.458.920-3" type="text"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Contrato SLA *</label>
+            <select id="newClientSla" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none">
+              <option value="Platinum SLA 99.98% (2h 24/7)">Platinum SLA 99.98% (2h 24/7)</option>
+              <option value="Gold SLA 99.9% (4h)">Gold SLA 99.9% (4h)</option>
+              <option value="Silver SLA 99.5% (8h)">Silver SLA 99.5% (8h)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Correo IT *</label>
+            <input id="newClientEmail" required type="email" class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 placeholder:text-slate-500 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" placeholder="tecnologia@cliente.com.co"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Teléfono NOC Colombia *</label>
+            <input id="newClientPhone" required type="tel" class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 placeholder:text-slate-500 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" placeholder="+57 315 892 4410"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Dirección Sede / Datacenter *</label>
+            <input id="newClientSede" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 placeholder:text-slate-500 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" placeholder="Ej: Bogotá D.C. • Datacenter Zona Franca" type="text"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Equipos Instalados *</label>
+            <input id="newClientServers" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 placeholder:text-slate-500 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" placeholder="Ej: 16 Servidores Core & Racks" type="text"/>
+          </div>
+        </div>
+
+        <div class="pt-2.5 border-t border-slate-800 flex items-center justify-end gap-2.5">
+          <button data-modal-close type="button" class="btn-pro px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs">Cancelar</button>
+          <button type="submit" class="btn-primary-gradient px-5 py-2 rounded-xl font-display text-xs font-bold">Crear Cuenta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: EDITAR CLIENTE -->
+  <div id="editClientModal" class="modal-container hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-[#1C2541] border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div class="p-5 bg-[#0B132B]/85 border-b border-slate-800 flex items-center justify-between">
+        <h3 class="font-display font-bold text-sm text-white">Editar Cuenta Corporativa</h3>
+        <button data-modal-close class="btn-pro w-7 h-7 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+      </div>
+
+      <form id="formEditClient" class="p-5 space-y-3.5">
+        <input type="hidden" id="editClientId" />
+        <div>
+          <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Razón Social *</label>
+          <input id="editClientName" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">NIT Colombia</label>
+            <input id="editClientNit" readonly class="w-full bg-[#0B132B]/90 font-mono text-xs text-brand-cyan rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none font-bold" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Contrato SLA *</label>
+            <select id="editClientSla" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none">
+              <option value="Platinum SLA 99.98% (2h 24/7)">Platinum SLA 99.98% (2h 24/7)</option>
+              <option value="Gold SLA 99.9% (4h)">Gold SLA 99.9% (4h)</option>
+              <option value="Silver SLA 99.5% (8h)">Silver SLA 99.5% (8h)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Sedes & Datacenters *</label>
+            <input id="editClientSedes" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Equipos Instalados *</label>
+            <input id="editClientServers" required class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Estado de Cuenta</label>
+            <select id="editClientStatus" class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none">
+              <option value="Activo">Activo (Contrato Vigente)</option>
+              <option value="En Mantenimiento">En Mantenimiento</option>
+              <option value="Suspendido">Suspendido</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-mono text-slate-400 mb-1 uppercase font-semibold">Teléfono NOC</label>
+            <input id="editClientPhone" class="w-full bg-[#0B132B]/90 font-sans text-xs text-slate-200 rounded-xl px-3.5 py-2.5 border border-slate-800 focus:outline-none" />
+          </div>
+        </div>
+
+        <div class="pt-2.5 border-t border-slate-800 flex items-center justify-end gap-2.5">
+          <button data-modal-close type="button" class="btn-pro px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-semibold">Cancelar</button>
+          <button type="submit" class="btn-primary-gradient px-4 py-2 rounded-xl text-xs font-bold">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: DETALLE DE CONTRATO SLA -->
+  <div id="slaDetailModal" class="modal-container hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-[#1C2541] border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div class="p-5 bg-[#0B132B]/85 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-brand-cyan text-[20px]">verified</span>
+          <h3 class="font-display font-bold text-sm text-white">Certificación de Contrato SLA Colombia</h3>
+        </div>
+        <button data-modal-close class="btn-pro w-7 h-7 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+      </div>
+      <div class="p-5 space-y-4 text-xs">
+        <div>
+          <span class="font-display font-bold text-sm text-white" id="modalSlaClientName">Bancolombia S.A.</span>
+          <div class="text-[11px] font-mono text-brand-cyan mt-0.5" id="modalSlaNit">NIT: 890.903.938-8</div>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-[10px] text-emerald-400 font-bold uppercase">Nivel de Servicio</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold" id="modalSlaTier">Platinum 99.98%</span>
+          </div>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            Cobertura 24 horas al día, 7 días a la semana con tiempo máximo de respuesta en sitio de 2 horas en datacenters de Bogotá, Tocancipá y Medellín.
+          </p>
+        </div>
+
+        <div class="space-y-2 text-[11px] text-slate-300">
+          <div class="flex justify-between border-b border-slate-800/80 pb-1.5">
+            <span class="text-slate-400 font-mono">Sedes Vinculadas:</span>
+            <span class="font-semibold text-white" id="modalSlaSedes">Datacenter Tocancipá</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800/80 pb-1.5">
+            <span class="text-slate-400 font-mono">Infraestructura:</span>
+            <span class="font-semibold text-white" id="modalSlaServers">24 Servidores Core</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400 font-mono">Estado Actual:</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold">Activo & Certificado</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-800 flex justify-end">
+          <button data-modal-close type="button" class="btn-primary-gradient px-4 py-2 rounded-xl text-xs font-bold">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
